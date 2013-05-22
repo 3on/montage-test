@@ -19,13 +19,11 @@ exports.TranslationView = Montage.create(Component, /** @lends module:"ui/transl
 
     didCreate: {
         value: function() {
-
         }
     },
 
     draw: {
         value: function() {
-            
         }
     }
 

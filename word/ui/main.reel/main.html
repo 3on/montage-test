@@ -12,27 +12,8 @@
                 "properties": {
                     "element": {"#": "main"},
                     "wordForm": {"#": "wordForm"},
-                    "wordInput": {"@": "wordInput"},
-                    "translationSelect": {"@": "translationSelect"}
-                }
-            },
-
-            "wordInput": {
-                "module": "montage/ui/text-input.js",
-                "name": "TextInput",
-                "properties": {
-                    "element": {"#": "wordInput"}
-                },
-                "bindings": {
-                    "placeholder": {"<-": "@translationSelect.value"}
-                }
-            },
-
-            "translationSelect" : {
-                "module": "montage/ui/select.reel",
-                "name": "Select",
-                "properties": {
-                    "element": {"#": "translationSelect"}
+                    "wordInput": {"#": "wordInput"},
+                    "translationSelect": {"#": "translationSelect"}
                 }
             },
 
@@ -63,11 +44,15 @@
     <div data-montage-id="main" class="Main">
         <form id="wordForm">
             <select id="translationSelect">
-                <option value="enfr" selected="selected" data-placeholder="English word to translate in French">en -> fr</option>
-                <option value="fren" 
-                    data-placeholder="French word to translate in English">fr -> en</option>
+                <option value="enfr" selected="selected">en -> fr</option>
+                <option value="fren">fr -> en</option>
             </select>
-             <input id="wordInput" placeholder="..."  autofocus />
+             <input id="wordInput"
+                placeholder="..."
+                data-fren="French word to translate in English"
+                data-enfr="English word to translate in French"
+                autofocus
+                type="search" />
         </form>
        
 
