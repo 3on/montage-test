@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Main</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script type="text/montage-serialization">
+        {
+            "owner": {
+                "properties": {
+                    "element": {"#": "main"},
+                    "wordForm": {"#": "wordForm"},
+                    "wordInput": {"#": "wordInput"},
+                    "translationSelect": {"#": "translationSelect"}
+                }
+            },
+
+            "translationRepetition": {
+                "prototype": "montage/ui/repetition.reel",
+                "properties": {
+                    "element": {"#": "translation-list"}
+                },
+                "bindings": {
+                    "contentController": {"<-": "@owner.translationListController"}
+                }
+            },
+
+            "translationView": {
+                "prototype": "ui/translation-view.reel",
+                "properties": {
+                    "element": {"#": "translationView"}
+                },
+                "bindings": {
+                    "translation": {"<-": "@translationRepetition.objectAtCurrentIteration"}
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div data-montage-id="main" class="Main">
+        <form id="wordForm">
+            <select id="translationSelect">
+                <option value="enfr" selected="selected">en -> fr</option>
+                <option value="fren">fr -> en</option>
+            </select>
+             <input id="wordInput"
+                placeholder="..."
+                data-fren="French word to translate in English"
+                data-enfr="English word to translate in French"
+                autofocus
+                type="search" />
+        </form>
+       
+
+        <ul data-montage-id="translation-list">
+            <li data-montage-id="translationView">...</li>
+        </ul>
+
+    </div>
+</body>
+</html>

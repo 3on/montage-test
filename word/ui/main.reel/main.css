@@ -1,0 +1,9 @@
+.Main input {
+    min-width: 400px;
+    font-size: 20px;
+}
+
+.Main select {
+    font-size: 20px;
+    height: 1.4em;
+}

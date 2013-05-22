@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="translation-view.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "translation-view"}
+            }
+        },
+
+        "term": {
+            "module": "montage/ui/dynamic-text.reel",
+            "name": "DynamicText",
+            "properties": {
+                "element": {"#": "term"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.translation.term"}
+            }
+        },
+
+        "pos": {
+            "module": "montage/ui/dynamic-text.reel",
+            "name": "DynamicText",
+            "properties": {
+                "element": {"#": "pos"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.translation.partOfSpeech"}
+            }
+        },
+
+        "sense": {
+            "module": "montage/ui/dynamic-text.reel",
+            "name": "DynamicText",
+            "properties": {
+                "element": {"#": "sense"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.translation.sense"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <li data-montage-id="translation-view" class="TranslationView">
+            <strong data-montage-id="term"></strong> <em data-montage-id="pos"></em> 
+            <span data-montage-id="sense">()</span>
+    </li>
+</body>
+</html>
